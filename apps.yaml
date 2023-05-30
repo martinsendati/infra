@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-ws-deploy
+  labels:
+    app: app-ws
+spec:
+  replicas: 1
+  strategy:
+     type: RollingUpdate
+     rollingUpdate:
+        maxUnavailable: 1
+        maxSurge: 1
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      app: app-ws
+  template:
+    metadata:
+      labels:
+        app: app-ws
+    spec:
+      containers:
+      - name: app-ws
+        image: nginx:latest
+        ports:
+        - containerPort: 8080
