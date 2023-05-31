@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-ws-deploy
+  name: app-go
   labels:
-    app: app-ws
+    app: app-go
 spec:
   replicas: 1
   strategy:
@@ -14,14 +14,14 @@ spec:
   minReadySeconds: 2
   selector:
     matchLabels:
-      app: app-ws
+      app: app-go
   template:
     metadata:
       labels:
-        app: app-ws
+        app: app-go
     spec:
       containers:
-      - name: app-ws
-        image: nginx:latest
+      - name: app-go
+        image: martooo/app-go:v1
         ports:
         - containerPort: 8080
