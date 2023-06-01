@@ -25,4 +25,4 @@ spec:
         image: martooo/app-go:v1
         ports:
         - containerPort: 8080
-#etcetera
+#mandanga
