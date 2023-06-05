@@ -5,7 +5,7 @@ metadata:
   labels:
     app: app-go
 spec:
-  replicas: 10
+  replicas: 1
   strategy:
      type: RollingUpdate
      rollingUpdate:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: app-go
-        image: martooo/app-go:v1
+        image: martooo/app-go:v4
         ports:
-        - containerPort: 8080
+        - containerPort: 8878
 #etcetera
