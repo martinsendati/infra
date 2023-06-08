@@ -23,6 +23,12 @@ spec:
       containers:
       - name: app-go
         image: martooo/app-go:v4
+        volumeMounts:
+        - mountPath: /home
+          name: home
         ports:
-        - containerPort: 8878
-#etcetera
+          - containerPort: 8878     
+      volumes:
+       - name: home
+         hostPath: 
+           path: /home/volumen
