@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-app-go
+  labels:
+    type: local
+spec:
+  storageClassName: sistemaficheros
+  capacity:
+    storage: 400Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/home/vol-tincho"
